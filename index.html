@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#7b1734">
+  <meta name="description" content="영산대학교 네팔 홍수 피해 구호 모금 계좌 안내">
+  <title>네팔 홍수 피해 구호 모금 | 영산대학교</title>
+  <style>
+    :root {
+      --paper: #fbfaf7;
+      --surface: #ffffff;
+      --ink: #171824;
+      --muted: #5d6170;
+      --navy: #17253f;
+      --crimson: #7b1734;
+      --crimson-dark: #601026;
+      --line: #dedbd4;
+      --success: #166534;
+      --shadow: 0 14px 38px rgba(23, 37, 63, .10);
+    }
+    * { box-sizing: border-box; }
+    html { background: var(--paper); }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--ink);
+      background:
+        linear-gradient(180deg, rgba(123, 23, 52, .055), transparent 250px),
+        var(--paper);
+      font-family: Pretendard, "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", Arial, sans-serif;
+      line-height: 1.55;
+      word-break: keep-all;
+    }
+    .topbar { height: 7px; background: linear-gradient(90deg, var(--crimson) 0 62%, var(--navy) 62% 100%); }
+    main { width: min(100%, 540px); margin: 0 auto; padding: 28px 20px calc(40px + env(safe-area-inset-bottom)); }
+    header { display: flex; align-items: center; justify-content: space-between; gap: 18px; margin-bottom: 34px; }
+    .brand { display: flex; align-items: center; gap: 11px; }
+    .brand-mark {
+      display: grid; place-items: center; width: 42px; height: 42px;
+      border: 1px solid rgba(23, 37, 63, .20); border-radius: 50%;
+      color: var(--crimson); font-family: Georgia, serif; font-weight: 700; font-size: 18px;
+      background: rgba(255,255,255,.7);
+    }
+    .brand-ko { font-size: 16px; font-weight: 800; letter-spacing: -.02em; color: var(--navy); }
+    .brand-en { margin-top: 1px; font-size: 9px; font-weight: 700; letter-spacing: .12em; color: var(--muted); }
+    .language { font-size: 12px; font-weight: 700; color: var(--crimson); letter-spacing: .06em; }
+    .eyebrow { margin: 0 0 13px; color: var(--crimson); font-size: 13px; font-weight: 800; letter-spacing: .10em; }
+    h1 { margin: 0; color: var(--navy); font-size: clamp(31px, 8vw, 44px); line-height: 1.14; letter-spacing: -.045em; }
+    .lead { margin: 18px 0 9px; font-size: 17px; font-weight: 650; line-height: 1.62; }
+    .lead-en { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.55; }
+    .divider { width: 54px; height: 3px; margin: 28px 0; background: var(--crimson); border-radius: 99px; }
+    .account-panel {
+      background: var(--surface); border: 1px solid var(--line); border-radius: 18px;
+      padding: 24px 20px 20px; box-shadow: var(--shadow);
+    }
+    .account-label { margin: 0 0 17px; color: var(--muted); font-size: 13px; font-weight: 750; letter-spacing: .05em; }
+    dl { margin: 0; }
+    .row { display: grid; grid-template-columns: 76px 1fr; gap: 10px; align-items: baseline; padding: 9px 0; }
+    dt { color: var(--muted); font-size: 14px; }
+    dd { margin: 0; font-size: 17px; font-weight: 750; }
+    .account-number { font-size: clamp(24px, 7vw, 30px); line-height: 1.2; letter-spacing: -.025em; font-variant-numeric: tabular-nums; white-space: nowrap; }
+    button { font: inherit; }
+    .copy-button {
+      width: 100%; min-height: 58px; margin-top: 20px; border: 0; border-radius: 10px;
+      color: #fff; background: var(--crimson); font-size: 17px; font-weight: 800;
+      cursor: pointer; box-shadow: 0 8px 20px rgba(123, 23, 52, .18);
+      transition: background .15s ease, transform .15s ease;
+    }
+    .copy-button:hover { background: var(--crimson-dark); }
+    .copy-button:active { transform: translateY(1px); }
+    .copy-button:focus-visible, .share-button:focus-visible { outline: 3px solid rgba(23, 37, 63, .32); outline-offset: 3px; }
+    .copy-status { min-height: 24px; margin: 10px 0 0; text-align: center; color: var(--success); font-size: 14px; font-weight: 750; }
+    .verify {
+      margin: 18px 0 0; padding: 15px 16px; color: var(--navy); background: #f3f4f7;
+      border-radius: 9px; font-size: 14px; line-height: 1.55;
+    }
+    .verify strong { color: var(--crimson); }
+    .steps { margin: 26px 0 0; padding: 0; list-style: none; counter-reset: steps; }
+    .steps li { position: relative; padding: 0 0 18px 42px; color: var(--muted); font-size: 14px; }
+    .steps li::before {
+      counter-increment: steps; content: counter(steps); position: absolute; left: 0; top: -2px;
+      display: grid; place-items: center; width: 28px; height: 28px; border: 1px solid var(--line);
+      border-radius: 50%; background: #fff; color: var(--navy); font-weight: 800;
+    }
+    .steps b { color: var(--ink); }
+    .share-button {
+      display: none; width: 100%; min-height: 50px; margin-top: 6px; border: 1px solid var(--line);
+      border-radius: 10px; color: var(--navy); background: transparent; font-weight: 750; cursor: pointer;
+    }
+    footer { margin-top: 34px; padding-top: 22px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; line-height: 1.65; }
+    footer p { margin: 0 0 7px; }
+    .notice { color: var(--navy); font-weight: 700; }
+    @media (max-width: 370px) {
+      main { padding-left: 15px; padding-right: 15px; }
+      .account-panel { padding-left: 16px; padding-right: 16px; }
+      .row { grid-template-columns: 65px 1fr; }
+      .account-number { font-size: 22px; }
+    }
+    @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+  </style>
+</head>
+<body>
+  <div class="topbar" aria-hidden="true"></div>
+  <main>
+    <header>
+      <div class="brand" aria-label="영산대학교">
+        <div class="brand-mark" aria-hidden="true">Y'sU</div>
+        <div>
+          <div class="brand-ko">영산대학교</div>
+          <div class="brand-en">YOUNGSAN UNIVERSITY</div>
+        </div>
+      </div>
+      <div class="language">KOR · ENG</div>
+    </header>
+
+    <section aria-labelledby="page-title">
+      <p class="eyebrow">NEPAL FLOOD RELIEF</p>
+      <h1 id="page-title">네팔 홍수 피해<br>구호 모금</h1>
+      <p class="lead">네팔 홍수로 피해를 입은 분들을 추모하고, 피해 복구와 구호 활동을 지원하기 위한 모금입니다.</p>
+      <p class="lead-en" lang="en">This fundraiser honors those affected by the floods in Nepal and supports relief and recovery efforts.</p>
+    </section>
+
+    <div class="divider" aria-hidden="true"></div>
+
+    <section class="account-panel" aria-labelledby="account-title">
+      <h2 id="account-title" class="account-label">기부 계좌 · DONATION ACCOUNT</h2>
+      <dl>
+        <div class="row"><dt>은행</dt><dd>KB국민은행</dd></div>
+        <div class="row"><dt>계좌번호</dt><dd class="account-number">909601-01-629487</dd></div>
+        <div class="row"><dt>예금주</dt><dd>영산대학교</dd></div>
+      </dl>
+      <button id="copyButton" class="copy-button" type="button">계좌번호 복사하기</button>
+      <p id="copyStatus" class="copy-status" role="status" aria-live="polite"></p>
+      <p class="verify">송금하기 전에 예금주가 반드시 <strong>‘영산대학교’</strong>로 표시되는지 확인해 주세요.</p>
+    </section>
+
+    <ol class="steps" aria-label="송금 방법">
+      <li><b>계좌번호 복사하기</b> 버튼을 누릅니다.<br><span lang="en">Tap “Copy account number.”</span></li>
+      <li>사용하시는 <b>은행 또는 간편송금 앱</b>을 엽니다.<br><span lang="en">Open your banking or money transfer app.</span></li>
+      <li>이체 화면에 계좌번호를 붙여 넣고 <b>예금주를 확인</b>합니다.<br><span lang="en">Paste the number and verify the recipient.</span></li>
+    </ol>
+
+    <button id="shareButton" class="share-button" type="button">이 안내 페이지 공유하기</button>
+
+    <footer>
+      <p class="notice">이 페이지는 계좌정보를 편리하게 복사할 수 있도록 제공하는 안내 페이지이며, 송금을 직접 처리하거나 개인정보를 수집하지 않습니다.</p>
+      <p lang="en">This page provides donation account information only. It does not process transfers or collect personal information.</p>
+    </footer>
+  </main>
+
+  <script>
+    const account = '909601-01-629487';
+    const copyButton = document.getElementById('copyButton');
+    const copyStatus = document.getElementById('copyStatus');
+    const shareButton = document.getElementById('shareButton');
+
+    async function copyAccount() {
+      try {
+        await navigator.clipboard.writeText(account);
+      } catch (_) {
+        const field = document.createElement('textarea');
+        field.value = account;
+        field.setAttribute('readonly', '');
+        field.style.position = 'fixed';
+        field.style.opacity = '0';
+        document.body.appendChild(field);
+        field.select();
+        document.execCommand('copy');
+        field.remove();
+      }
+      copyButton.textContent = '복사되었습니다';
+      copyStatus.textContent = '은행 앱의 이체 화면에 붙여 넣어 주세요.';
+      window.setTimeout(() => { copyButton.textContent = '계좌번호 복사하기'; }, 2200);
+    }
+
+    copyButton.addEventListener('click', copyAccount);
+
+    if (navigator.share) {
+      shareButton.style.display = 'block';
+      shareButton.addEventListener('click', async () => {
+        try {
+          await navigator.share({
+            title: '네팔 홍수 피해 구호 모금',
+            text: '영산대학교 네팔 홍수 피해 구호 모금 안내',
+            url: window.location.href
+          });
+        } catch (_) {}
+      });
+    }
+  </script>
+</body>
+</html>
